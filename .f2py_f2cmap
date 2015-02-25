@@ -1,0 +1,1 @@
+dict(real=dict(rkind='double'), complex=dict(ckind='complex_float'), integer=dict(ikind='int'))
