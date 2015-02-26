@@ -1,6 +1,7 @@
 build
 *.pyc
 *.so
-mie/_*.c
+mie/_*
+*ipynb_checkpoints
 
 *~
