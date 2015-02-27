@@ -14,58 +14,18 @@ module core_shell_module
 !
 !----------------------------------------------------------------------------------------------------
 
+  use kinds_module
+
   implicit none
 
   private 
-  public :: core_shell_mie
-  public :: rkind, ikind, ckind
-  public :: test_double, test_complex, test_integer
-
-! -------------------------------------------------------------------
-! Define some useful constants / parameters
-  integer,           parameter :: rkind = 8,          &!kind(1.d0), &
-                                  ikind = 4,          &
-                                  ckind = 4
+  public :: core_shell_mie_driver
 
 contains
 
-!-------------------------------------------------------------------
-
-  subroutine test_double( x )
-    real (kind=rkind), intent(in) :: x
-
-!-- F2PY VARIABLE BINDINGS
-    ! f2py intent(in) :: x
-
-    print *, "x is", x
-
-  end subroutine test_double
-
-  subroutine test_integer( x )
-    integer (kind=ikind), intent(in) :: x
-
-!-- F2PY VARIABLE BINDINGS
-    ! f2py intent(in) :: x
-
-    print *, "x is", x
-
-  end subroutine test_integer
-
-  subroutine test_complex( x )
-    complex (kind=ckind), intent(in) :: x
-
-!-- F2PY VARIABLE BINDINGS
-    ! f2py intent(in) :: x
-
-    print *, "x is", x
-    print *, "  real(x) =", real(x)
-    print *, "  imag(x) =", aimag(x)
-
-  end subroutine test_complex
-
-  subroutine core_shell_mie(radius_shell_um,radius_core_um,      &
-                            refi_shell,refi_core, rad_lambda_um, &
-                            QSCATc, QEXTc, asym)
+  subroutine core_shell_mie_driver(radius_shell_um,radius_core_um,      &
+                                   refi_shell,refi_core, rad_lambda_um, &
+                                   QSCATc, QEXTc, asym)
 ! /*---------------------------------------------------------------*/
 ! /* INPUTS:                                                       */
 ! /*---------------------------------------------------------------*/
@@ -204,7 +164,7 @@ contains
     !   print *, "  asym - ", asym
     ! end if
 
-  end subroutine core_shell_mie
+  end subroutine core_shell_mie_driver
 
 !**********************************************
 !     /*--------------------------------------------------------*/

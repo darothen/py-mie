@@ -20,11 +20,12 @@ DOWNLOAD_URL = 'http://github.com/darothen/py-mie'
 #VERSION = mie.__version__
 
 ## Setup the compiled library modules
-sources = []
+mie_files = [s+".f90" for s in ["mod_kinds", "mod_core_shell", "mod_bhmie"]]
+sources   = [os.path.join(src_dir, s) for s in mie_files] 
+sources  += [os.path.join(pkg_dir, "mod_mie.pyf"), ] 
 
 mie_ext = Extension(
-    'mie._mie', sources=[os.path.join(src_dir, "mod_core_shell.f90"), 
-                         os.path.join(pkg_dir, "mod_core_shell.pyf"), ]
+    'mie._mie', sources=sources
 )
 
 setup(

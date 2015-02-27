@@ -1,13 +1,52 @@
 
 import numpy as np
 
-from ._mie import core_shell_module 
+from _mie import core_shell_module as core_shell
+from _mie import bhmie_module as bhmie
 
 #: Density of pure water, in kg/m^3
 RHO_WATER = 1e3
 
-def particle_scatter(particle_radius, core_fraction, radiation_lambda,
-                     n_shell, n_core):
+def bhmie_scatter(particle_radius, radiation_lambda, n_particle):
+    """ Compute the scattering/absorption efficiency and asymmetry
+    parameter for a homogenous particle.
+
+    This function interfaces with the compiled Mie theory modules in order
+    to determine the scattering parameters.
+
+    Parameters
+    ----------
+    particle_radius : float
+        The total particle radius (core + shell) in microns
+    radiation_lambda : float
+        Wavelength of incident radiation in microns
+    n_particle : complex
+        Complex refractive indices of the particle material
+
+    Returns
+    -------
+    Qsca, Qabs, asym : floats
+        The scattering efficiency, absorption efficiency, and asymmetry
+        parameter for the specified particle
+
+    """ 
+
+    ## Pass directly to Mie module
+    Qext0, Qsca0, asym0 = bhmie.bhmie_driver( \
+        particle_radius, 
+        np.real(n_particle), np.imag(n_particle), 
+        radiation_lambda
+    )
+
+    ## Post-process to properly set scattering and absorption efficiencies
+    Qsca = np.min([Qsca0, Qext0]) # scattering efficiency
+    Qabs = Qext0 - Qsca           # absorption efficiency
+    asym = asym0
+
+    return Qsca, Qabs, asym
+
+def core_shell_scatter(particle_radius, core_fraction, radiation_lambda,
+                       n_shell, n_core):
     """ Compute the scattering/absorption efficiency and asymmetry
     parameter for a heterogeneous, core-shell mixed particle.
 
@@ -34,7 +73,7 @@ def particle_scatter(particle_radius, core_fraction, radiation_lambda,
     """ 
 
     ## Pass directly to Mie module
-    Qsca0, Qext0, asym0 = core_shell_module.core_shell_mie( \
+    Qsca0, Qext0, asym0 = core_shell.core_shell_mie_driver( \
         particle_radius, 
         core_fraction*particle_radius,
         n_shell,
@@ -99,7 +138,7 @@ def integrate_mode(core_fraction, n_shell, n_core, radiation_lambda,
     for i, radius in enumerate(radii):
 
         ## Mie theory calculation
-        Qsca, Qabs, asym = particle_scatter( \
+        Qsca, Qabs, asym = core_shell_scatter( \
             radius, core_fraction, radiation_lambda, n_shell, n_core
         )
 
