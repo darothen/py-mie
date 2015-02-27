@@ -1,8 +1,7 @@
 Mie Library
 ===========
 
-This library wraps several implementations of Mie theory calculators ([1] ... )
-with a Python interface. 
+This library wraps several implementations of Mie theory calculators ([1], [2], ... ) with a Python interface. 
 
 Installation
 ------------
@@ -25,3 +24,4 @@ References
 ----------
 
 1. [Owen B. Toon and T. P. Ackerman, "Algorithms for the calculation of scattering by stratified spheres," Appl. Opt. 20, 3657-3660 (1981)](http://dx.doi.org/10.1364/AO.20.003657)
+2. [C. F. Bohren and D. R. Huffman, Absorption and Scattering of Light by Small Particles, New York, Wiley, 1983, 530 pages](http://onlinelibrary.wiley.com/book/10.1002/9783527618156)
