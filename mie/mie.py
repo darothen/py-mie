@@ -1,11 +1,15 @@
 
 import numpy as np
 
-from _mie import core_shell_module as core_shell
-from _mie import bhmie_module as bhmie
+from ._mie import dmiess_module as dmiess
+from ._mie import bhmie_module as bhmie
+from ._mie import dmilay_module as dmilay
 
 #: Density of pure water, in kg/m^3
 RHO_WATER = 1e3
+
+__all__ = [ "bhmie_scatter", "core_shell_scatter",
+            "integrate_mode", ]
 
 def bhmie_scatter(particle_radius, radiation_lambda, n_particle):
     """ Compute the scattering/absorption efficiency and asymmetry
@@ -73,7 +77,7 @@ def core_shell_scatter(particle_radius, core_fraction, radiation_lambda,
     """ 
 
     ## Pass directly to Mie module
-    Qsca0, Qext0, asym0 = core_shell.core_shell_mie_driver( \
+    Qsca0, Qext0, asym0 = dmiess.dmiess_driver( \
         particle_radius, 
         core_fraction*particle_radius,
         n_shell,

@@ -1,4 +1,6 @@
+from __future__ import division, absolute_import, print_function
 
-__version__ = "0.0.2-dev"
+__version__ = "0.1.0dev"
 
-from ._mie import core_shell_module
+from .mie import *
+

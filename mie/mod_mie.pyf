@@ -2,6 +2,7 @@
 ! Note: the context of this file is case sensitive.
 python module _mie ! in
     interface
+
         module kinds_module ! in src/mod_kinds.f90
             integer, private,parameter,public,optional :: ckind=4
             integer, private,parameter,public,optional :: rkind=8
@@ -30,9 +31,9 @@ python module _mie ! in
             end subroutine bhmie_driver
         end module bhmie_module
 
-        module core_shell_module ! in src/mod_core_shell.f90
+        module dmiess_module ! in src/mod_dmiess.f90
             use kinds_module
-            subroutine core_shell_mie_driver(radius_shell_um,radius_core_um,refi_shell,refi_core,rad_lambda_um,qscatc,qextc,asym) ! in src/mod_core_shell.f90:core_shell_module
+            subroutine dmiess_driver(radius_shell_um,radius_core_um,refi_shell,refi_core,rad_lambda_um,qscatc,qextc,asym) ! in src/mod_dmiess.f90:dmiess_module
                 real(kind=rkind) intent(in) :: radius_shell_um
                 real(kind=rkind) intent(in) :: radius_core_um
                 complex(kind=ckind) intent(in) :: refi_shell
@@ -41,8 +42,22 @@ python module _mie ! in
                 real(kind=rkind) intent(out) :: qscatc
                 real(kind=rkind) intent(out) :: qextc
                 real(kind=rkind) intent(out) :: asym
-            end subroutine core_shell_mie_driver
-        end module core_shell_module
+            end subroutine dmiess_driver
+        end module dmiess_module
+
+        module dmilay_module ! in src/mod_dmilay.f90
+            use kinds_module
+            subroutine dmilay_driver(radius_shell,radius_core,shell_refr,core_refr,wavelength,Qext,Qsca,Qgsa) ! in src/mod_milay.f90:dmilay_module
+                real intent(in) :: radius_shell
+                real intent(in) :: radius_core
+                real intent(in) :: wavelength
+                complex intent(in) :: shell_refr
+                complex intent(in) :: core_refr
+                real intent(out) :: Qext
+                real intent(out) :: Qsca
+                real intent(out) :: Qgsa
+            end subroutine dmilay_driver
+        end module dmilay_module
 
     end interface
 end python module _mie

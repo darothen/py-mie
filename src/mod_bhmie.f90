@@ -22,7 +22,8 @@ module bhmie_module
 CONTAINS
 
 !=======================================================================
- subroutine bhmie_driver( radius, refre, refim, wavelength, Qext, Qsca, Qgsa )
+ subroutine bhmie_driver( radius, refre, refim, wavelength, &
+                          Qext, Qsca, Qgsa )
 !=======================================================================
 !
 ! Purpose: bhmie driver. Calls bhmie routine to obtain the extinction
@@ -36,7 +37,6 @@ CONTAINS
    implicit NONE
 
 !----------------------------- arguments -------------------------------
-
 
    real, intent(in) :: &
                       radius, &!particle radius [um]              

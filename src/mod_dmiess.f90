@@ -1,4 +1,4 @@
-module core_shell_module
+module dmiess_module
 !----------------------------------------------------------------------------------------------------
 !
 ! This module is modified from a program which reads a lookup-table of
@@ -7,10 +7,6 @@ module core_shell_module
 ! as implemented for
 !
 !       Toon and Ackerman, Applied Optics, Vol. 20, Pg. 3657
-! 
-! There are two interfaces for this code. The first is provided by Rahul
-! Zaveri (PNNL) which strips away several degrees of freedom. The second
-! is a more general interface for core-shell aeroosl/droplet systems.
 !
 !----------------------------------------------------------------------------------------------------
 
@@ -19,62 +15,46 @@ module core_shell_module
   implicit none
 
   private 
-  public :: core_shell_mie_driver
+  public :: dmiess_driver
 
 contains
 
-  subroutine core_shell_mie_driver(radius_shell_um,radius_core_um,      &
-                                   refi_shell,refi_core, rad_lambda_um, &
-                                   QSCATc, QEXTc, asym)
-! /*---------------------------------------------------------------*/
-! /* INPUTS:                                                       */
-! /*---------------------------------------------------------------*/
+!=======================================================================
+  subroutine dmiess_driver(radius_shell_um,radius_core_um,      &
+                           refi_shell,refi_core, rad_lambda_um, &
+                           QEXTc, QSCATc, asym                     )
+!=======================================================================
 !
-!   VLAMBc: Wavelength of the radiation
-!   NRGFLAGc: Flag to indicate a number density of volume radius
-!   RGc: Number (RGN = Rm) or volume (RGV) weighted mean radius of
-!        the particle size distribution
-!   SIGMAGc: Geometric standard deviation of the distribution
-!   SHELRc: Real part of the index of refraction for the shell
-!   SHELIc: Imaginary part of the index of refraction for the shell
-!   RINc: Inner core radius as a fraction of outer shell radius
-!   CORERc: Real part of the index of refraction for the core
-!   COREIc: Imaginary part of the index of refraction for the core
-!   NANG: Number of scattering angles between 0 and 90 degrees,
+! Purpose: dmiess driver. Calls the dmiess helper routines in order to
+!          calculate the extinction efficency Qext, scattering
+!          efficiency Qsca, and asymmetry parameter for a particle
+!          consisting of a core and shell with total radius 
+!          `radius_shell_um` and different composition / refractive
+!          indices for the core and shell
+!
+!-----------------------------------------------------------------------
+! NANG: Number of scattering angles between 0 and 90 degrees,
 !        inclusive
-!
-! /*---------------------------------------------------------------*/
-! /* OUTPUTS:                                                      */
-! /*---------------------------------------------------------------*/
-!
-!   QEXTc: Extinction efficiency of the particle
-!   QSCAc: Scattering efficiency of the particle
-!   QBACKc: Backscatter efficiency of the particle
-!   EXTc: Extinction cross section of the particle
-!   SCAc: Scattering cross section of the particle
-!   BACKc: Backscatter cross section of the particle
-!   GSCA: Asymmetry parameter of the particles phase function
-!   ANGLES(NAN): Scattering angles in degrees
-!   S1R(NAN): Real part of the amplitude scattering matrix
-!   S1C(NAN): Complex part of the amplitude scattering matrix
-!   S2R(NAN): Real part of the amplitude scattering matrix
-!   S2C(NAN): Complex part of the amplitude scattering matrix
-!   S11N: Normalization coefficient of the scattering matrix
-!   S11(NAN): S11 scattering coefficients
-!   S12(NAN): S12 scattering coefficients
-!   S33(NAN): S33 scattering coefficients
-!   S34(NAN): S34 scattering coefficients
-!   SPOL(NAN): Degree of polarization of unpolarized, incident light
-!   SP(NAN): Phase function
-!
 ! NOTE: NAN=2*NANG-1 is the number of scattering angles between
 !       0 and 180 degrees, inclusive.
 !----------------------------------------------------------
-    real (kind=rkind),     intent(in) :: radius_shell_um, radius_core_um, &
-                                         rad_lambda_um
-    complex (kind=ckind),  intent(in) :: refi_core, refi_shell
 
-    real (kind=rkind),    intent(out) :: qscatc, qextc, asym
+
+!----------------------------- arguments -------------------------------
+
+    real (kind=rkind), intent(in) :: &
+        radius_shell_um,  &  ! total particule radius, in microns
+        radius_core_um,   &  ! particle core radius, in microns
+        rad_lambda_um        ! wavelength of incident radiation, in microns
+
+    complex (kind=ckind), intent(in) :: &
+        refi_core,        &  ! complex refractive index of core
+        refi_shell           ! complex refractive index of shell
+
+    real (kind=rkind), intent(out) :: &
+        qscatc,           &  ! scattering efficiency
+        qextc,            &  ! extinction efficiency
+        asym                 ! asymmetry parameter
 
 !-- F2PY VARIABLE BINDINGS
     ! f2py intent(in) :: radius_shell_um, radius_core_um, rad_lambda_um
@@ -164,7 +144,7 @@ contains
     !   print *, "  asym - ", asym
     ! end if
 
-  end subroutine core_shell_mie_driver
+  end subroutine dmiess_driver
 
 !**********************************************
 !     /*--------------------------------------------------------*/
@@ -1211,7 +1191,7 @@ contains
 !**********************************************
 
 
-end module core_shell_module
+end module dmiess_module
 
 
 

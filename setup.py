@@ -14,13 +14,13 @@ MAINTAINER = "Daniel Rothenberg"
 MAINTAINER_EMAIL = "darothen@mit.edu"
 URL = 'http://github.com/darothen/py-mie'
 DOWNLOAD_URL = 'http://github.com/darothen/py-mie'
-#LICENSE = 'BSD 3-clause'
+LICENSE = 'MIT'
 
 #import mie
 #VERSION = mie.__version__
 
 ## Setup the compiled library modules
-mie_files = [s+".f90" for s in ["mod_kinds", "mod_core_shell", "mod_bhmie"]]
+mie_files = ["mod_%s.f90" % s for s in ["kinds", "dmiess", "bhmie", "dmilay"]]
 sources   = [os.path.join(src_dir, s) for s in mie_files] 
 sources  += [os.path.join(pkg_dir, "mod_mie.pyf"), ] 
 
@@ -39,20 +39,23 @@ setup(
     maintainer_email=MAINTAINER_EMAIL,
     url=URL,
     download_url=DOWNLOAD_URL,
-    #license=LICENSE,
+    license=LICENSE,
     #packages=['supersmoother',
     #          'supersmoother.tests',
     #      ],
+    install_requires=['numpy', ],
     packages=['mie',],
     classifiers=[
-        #'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha', 
         'Environment :: Console',
         'Intended Audience :: Science/Research',
-        #'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
+        'Operating System :: Unix',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Fortran :: 90',
+        'Programming Language :: Fortran',
+        'Topic :: Scientific/Engineering :: Atmospheric Science',
     ],
 
     ext_modules = [
