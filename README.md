@@ -1,7 +1,7 @@
 Mie Library
 ===========
 
-This library wraps several implementations of Mie theory calculators ([1], [2], ... ) with a Python interface. 
+This library wraps several Fortran implementations of Mie theory calculators ([1], [2], ... ) with a Python interface. The Fortran code itself has not been changed from their original form, and two-levels of drivers are available to run them. At the moment, an interface to the raw Mie codes (with all input parameters and output quantities) is not provided, although this functionality will probably be added in the future.
 
 Installation
 ------------
@@ -15,7 +15,7 @@ The only package dependency is ``f2py`` via ``numpy`` or ``scipy``.
 Authors
 -------
 
-This library was developed by [Daniel Rothenberg (Massachusetts Institute of Technology](http://www.github.com/darothen). The Mie code and specialized interfaces have been provided by:
+This library was packaged by [Daniel Rothenberg (Massachusetts Institute of Technology](http://www.github.com/darothen). The Mie code and specialized interfaces have been provided by:
 
 - Rahul Zaveri (Pacific Northwest National Labs)
 - Alexander Avramov (Massachusetts Institute of Technology)
