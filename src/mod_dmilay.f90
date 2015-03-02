@@ -41,7 +41,7 @@ CONTAINS
         radius_core,     &  ! core radius [um]
         wavelength          ! radiation wavelngth 
      
-     complex, intent(in) :: & 
+     complex (kind=ckind), intent(in) :: & 
         shell_refr,      &  ! shell refractive index
         core_refr           ! core  refractive index 
 
@@ -61,13 +61,12 @@ CONTAINS
     wvnr = 2d0 * Pi / wavelength
 
     !refractive indices
-    refr_shell = shell_refr
-    refr_core = core_refr
+    refr_shell = cmplx( real(shell_refr), -1.*imag(shell_refr) )
+    refr_core  = cmplx( real(core_refr ), -1.*imag(core_refr ) )
 
     !shell/core radius [um]
     rshell = radius_shell
     rcore  = radius_core
-
 
     !get Mie coefficients for a sulfate coated BC particle with core 
     !radius r_core and shell radius rshell
@@ -205,6 +204,12 @@ CONTAINS
          PASS1  = .False.
 
       END IF
+
+! darothen: error checking on shell/core refractive indices
+      ! print *, "   rindsh", rindsh
+      ! print *, "    rcore", rindco
+      ! print *, "==================================================="
+
 
       XSHELL = RSHELL*WVNO
       XCORE  = RCORE*WVNO
