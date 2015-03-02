@@ -22,7 +22,7 @@ module bhmie_module
 CONTAINS
 
 !=======================================================================
- subroutine bhmie_driver( radius, refre, refim, wavelength, &
+ subroutine bhmie_driver( radius, refr_ind, wavelength, &
                           Qext, Qsca, Qgsa )
 !=======================================================================
 !
@@ -39,15 +39,15 @@ CONTAINS
 !----------------------------- arguments -------------------------------
 
    real, intent(in) :: &
-                      radius, &!particle radius [um]              
-                      refre,  &!refractive index Re part
-                      refim,  &!refractive index Im part
-                      wavelength ! in micron
+                      radius,   & ! particle radius [um]       
+                      wavelength  ! in micron
+   complex, intent(in) :: &
+                      refr_ind  ! particle complex refractive index
 
    real, intent(out) :: &
-                      Qext,   &!extinction efficiency
-                      Qsca,   &!scattering efficiency
-                      Qgsa     !assymetry parameter
+                      Qext,   & ! extinction efficiency
+                      Qsca,   & ! scattering efficiency
+                      Qgsa      ! assymetry parameter
 
 !------------------------- local workspace -----------------------------
 
@@ -60,7 +60,7 @@ CONTAINS
 !-----------------------------------------------------------------------
 
   ! refractive index at specific wavelength
-  ref_ndx = cmplx( refre, refim ) / ref_air
+  ref_ndx = refr_ind / ref_air
 
   ! size parameter less than size
   dum = 2. * pi * ref_air/wavelength

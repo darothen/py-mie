@@ -15,7 +15,7 @@ The only package dependency is ``f2py`` via ``numpy`` or ``scipy``.
 Authors
 -------
 
-This library was packaged by [Daniel Rothenberg (Massachusetts Institute of Technology](http://www.github.com/darothen). The Mie code and specialized interfaces have been provided by:
+This library was packaged by [Daniel Rothenberg (Massachusetts Institute of Technology)](http://www.github.com/darothen). The Mie code and specialized interfaces have been provided by:
 
 - Rahul Zaveri (Pacific Northwest National Labs)
 - Alexander Avramov (Massachusetts Institute of Technology)

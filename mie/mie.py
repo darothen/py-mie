@@ -77,7 +77,7 @@ def core_shell_scatter(particle_radius, core_fraction, radiation_lambda,
     """ 
 
     ## Pass directly to Mie module
-    Qsca0, Qext0, asym0 = dmiess.dmiess_driver( \
+    Qext0, Qsca0, asym0 = dmiess.dmiess_driver( \
         particle_radius, 
         core_fraction*particle_radius,
         n_shell,

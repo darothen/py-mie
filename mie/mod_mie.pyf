@@ -20,10 +20,9 @@ python module _mie ! in
             real, private,parameter,optional :: ref_air=1.0
             real, private,public :: bhmie_driver
             integer, private,parameter,optional :: nang=100
-            subroutine bhmie_driver(radius,refre,refim,wavelength,qext,qsca,qgsa) ! in src/mod_bhmie.f90:bhmie_module
+            subroutine bhmie_driver(radius,refr_ind,wavelength,qext,qsca,qgsa) ! in src/mod_bhmie.f90:bhmie_module
                 real intent(in) :: radius
-                real intent(in) :: refre
-                real intent(in) :: refim
+                complex intent(in) :: refr_ind
                 real intent(in) :: wavelength
                 real intent(out) :: qext
                 real intent(out) :: qsca
@@ -51,8 +50,8 @@ python module _mie ! in
                 real intent(in) :: radius_shell
                 real intent(in) :: radius_core
                 real intent(in) :: wavelength
-                complex intent(in) :: shell_refr
-                complex intent(in) :: core_refr
+                complex(kind=ckind) intent(in) :: shell_refr
+                complex(kind=ckind) intent(in) :: core_refr
                 real intent(out) :: Qext
                 real intent(out) :: Qsca
                 real intent(out) :: Qgsa
