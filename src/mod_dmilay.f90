@@ -542,7 +542,7 @@ CONTAINS
       SBACK  = 0.5*SBACK
       QBS    = ( DBLE(SBACK)**2 + DIMAG(SBACK)**2 ) / (PINUM*XSHELL**2)
 
-      END
+      END SUBROUTINE
 
       SUBROUTINE ErrMsg( MESSAG, FATAL )
 
@@ -605,7 +605,7 @@ CONTAINS
 
       END IF
 
-      END
+      END SUBROUTINE
 
       LOGICAL FUNCTION WrtBad( VARNAM )
 
@@ -645,7 +645,7 @@ CONTAINS
       IF( NUMMSG.EQ.MAXMSG ) CALL ERRMSG( &
           'Too many input errors.  Aborting...', .TRUE. )
 
-      END
+      END FUNCTION
 
       LOGICAL FUNCTION WrtDim( DIMNAM, MINVAL )
 
@@ -668,6 +668,6 @@ CONTAINS
 
       WRTDIM = .TRUE.
 
-      END
+      END FUNCTION
 
 end module
