@@ -30,7 +30,7 @@ mie_ext = Extension(
 
 setup(
     name=NAME,
-    #version=VERSION,
+    version='0.3.0',
     description=DESCRIPTION,
     #long_description=LONG_DESCRIPTION,
     author=AUTHOR,
@@ -44,7 +44,7 @@ setup(
     #          'supersmoother.tests',
     #      ],
     install_requires=['numpy', ],
-    packages=['mie',],
+    packages=['mie','mie.tests', ],
     classifiers=[
         'Development Status :: 3 - Alpha', 
         'Environment :: Console',
