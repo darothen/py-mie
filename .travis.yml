@@ -21,6 +21,7 @@ install:
     - conda create -n testenv --yes python=$TRAVIS_PYTHON_VERSION
     - source activate testenv
     - conda install --yes $DEPS
+    - python setup.py build_ext --inplace
     - python setup.py install
 
 # command to run tests
