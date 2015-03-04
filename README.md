@@ -3,6 +3,8 @@ Mie Library
 
 This library wraps several Fortran implementations of Mie theory calculators ([1], [2], ... ) with a Python interface. The Fortran code itself has not been changed from their original form, and two-levels of drivers are available to run them. At the moment, an interface to the raw Mie codes (with all input parameters and output quantities) is not provided, although this functionality will probably be added in the future.
 
+[![Build Status](https://travis-ci.org/darothen/py-mie.svg?branch=master)](https://travis-ci.org/darothen/py-mie)
+
 Installation
 ------------
 
