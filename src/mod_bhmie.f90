@@ -38,10 +38,10 @@ CONTAINS
 
 !----------------------------- arguments -------------------------------
 
-   real, intent(in) :: &
+   real (kind=rkind), intent(in) :: &
                       radius,   & ! particle radius [um]       
                       wavelength  ! in micron
-   complex, intent(in) :: &
+   complex (kind=ckind), intent(in) :: &
                       refr_ind  ! particle complex refractive index
 
    real, intent(out) :: &
@@ -54,7 +54,7 @@ CONTAINS
    !refractive index of the medium
 
    !integer :: iw, ir
-   real    :: x, dum 
+   real    :: x, dum
    complex :: ref_ndx   
 
 !-----------------------------------------------------------------------
@@ -63,7 +63,7 @@ CONTAINS
   ref_ndx = refr_ind / ref_air
 
   ! size parameter less than size
-  dum = 2. * pi * ref_air/wavelength
+  dum = 2. * pi * ref_air / wavelength
 
   ! size parameter 
   x = dum * radius
