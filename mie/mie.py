@@ -36,10 +36,8 @@ def bhmie_scatter(particle_radius, radiation_lambda, n_particle):
     """
 
     # Pass directly to Mie module
-    Qext0, Qsca0, asym0 = bhmie.bhmie_driver(
-        particle_radius,
-        np.real(n_particle), np.imag(n_particle),
-        radiation_lambda)
+    Qext0, Qsca0, asym0 = bhmie.bhmie_driver(particle_radius, n_particle,
+                                             radiation_lambda)
 
     # Post-process to properly set scattering and absorption efficiencies
     Qsca = np.min([Qsca0, Qext0])  # scattering efficiency
