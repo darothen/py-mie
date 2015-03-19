@@ -126,10 +126,7 @@ def integrate_mode(core_fraction, n_shell, n_core, radiation_lambda,
     """
 
     # Generate the integration grid for the particle size distribution
-    dlogr = np.log(r_max/r_min)/(nr-1)
-    logr = [np.log(r_min), ]
-    for i in xrange(1, nr):
-        logr.append(logr[-1] + dlogr)
+    logr, dlogr = np.linspace(np.log(r_min), np.log(r_max), nr, retstep=True)
     radii = np.exp(logr)
 
     sumsca  = 0.0
