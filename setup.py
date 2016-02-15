@@ -21,8 +21,8 @@ LICENSE = 'MIT'
 
 ## Setup the compiled library modules
 mie_files = ["mod_%s.f90" % s for s in ["kinds", "dmiess", "bhmie", "dmilay"]]
-sources   = [os.path.join(src_dir, s) for s in mie_files] 
-sources  += [os.path.join(pkg_dir, "mod_mie.pyf"), ] 
+sources   = [os.path.join(src_dir, s) for s in mie_files]
+sources  += [os.path.join(pkg_dir, "mod_mie.pyf"), ]
 
 mie_ext = Extension(
     'mie._mie', sources=sources
@@ -46,7 +46,7 @@ setup(
     install_requires=['numpy', ],
     packages=['mie','mie.tests', ],
     classifiers=[
-        'Development Status :: 3 - Alpha', 
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
@@ -54,11 +54,13 @@ setup(
         'Operating System :: Unix',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Fortran',
         'Topic :: Scientific/Engineering :: Atmospheric Science',
     ],
 
     ext_modules = [
-        mie_ext, 
+        mie_ext,
     ]
 )
