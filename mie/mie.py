@@ -1,4 +1,3 @@
-
 import numpy as np
 
 from ._mie import dmiess_module as dmiess
@@ -145,7 +144,7 @@ def integrate_mode(core_fraction, n_shell, n_core, radiation_lambda,
         exparg   = np.log(radius / mode_radius)/np.log(mode_sigma)
         dsdlogr  = np.exp(-0.5*exparg**2)  # m^2/m3(air)] log-normal cross section area
         volwet  += (4./3.)*(radius*1e-6)*dsdlogr*dlogr  # [m3/m3(air)] wet volume
-        volcore += (4./3.)*(core_fraction**3)*(radius*1e-6)*dsdlogr*dlogr 
+        volcore += (4./3.)*(core_fraction**3)*(radius*1e-6)*dsdlogr*dlogr
 
         sumabs += Qabs*dsdlogr*dlogr  # [m^2/m3(air)] absorption cross-section
         sumsca += Qsca*dsdlogr*dlogr  # [m^2/m3(air)] scattering cross-section
