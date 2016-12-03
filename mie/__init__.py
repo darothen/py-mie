@@ -3,4 +3,4 @@ from pkg_resources import get_distribution
 
 from .mie import *
 
-__version__ = "0.4.0dev"
+__version__ = get_distribution('py-mie')

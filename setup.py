@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 
 import os
+from numpy.distutils.core import setup, Extension
 
-try:
-    from setuptools import setup, Extension
-except:
-    from numpy.distutils.core import setup, Extension
-
-VERSION = '0.4.1'
+VERSION = '0.4.0'
 
 src_dir = "src"
 pkg_dir = "mie"
@@ -21,7 +17,6 @@ MAINTAINER_EMAIL = "darothen@mit.edu"
 URL = 'http://github.com/darothen/py-mie'
 DOWNLOAD_URL = 'http://github.com/darothen/py-mie'
 LICENSE = 'MIT'
-
 
 ## Setup the compiled library modules
 mie_files = ["mod_%s.f90" % s for s in ["kinds", "dmiess", "bhmie", "dmilay"]]
