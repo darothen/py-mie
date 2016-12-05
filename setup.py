@@ -3,6 +3,8 @@
 import os
 from numpy.distutils.core import setup, Extension
 
+VERSION = '0.4.0'
+
 src_dir = "src"
 pkg_dir = "mie"
 
@@ -16,9 +18,6 @@ URL = 'http://github.com/darothen/py-mie'
 DOWNLOAD_URL = 'http://github.com/darothen/py-mie'
 LICENSE = 'MIT'
 
-#import mie
-#VERSION = mie.__version__
-
 ## Setup the compiled library modules
 mie_files = ["mod_%s.f90" % s for s in ["kinds", "dmiess", "bhmie", "dmilay"]]
 sources   = [os.path.join(src_dir, s) for s in mie_files]
@@ -29,23 +28,23 @@ mie_ext = Extension(
 )
 
 setup(
-    name=NAME,
-    version='0.3.0',
-    description=DESCRIPTION,
+    name = NAME,
+    version = VERSION,
+    description = DESCRIPTION,
     #long_description=LONG_DESCRIPTION,
-    author=AUTHOR,
-    author_email=AUTHOR_EMAIL,
-    maintainer=MAINTAINER,
-    maintainer_email=MAINTAINER_EMAIL,
-    url=URL,
-    download_url=DOWNLOAD_URL,
-    license=LICENSE,
+    author = AUTHOR,
+    author_email = AUTHOR_EMAIL,
+    maintainer = MAINTAINER,
+    maintainer_email = MAINTAINER_EMAIL,
+    url = URL,
+    download_url = DOWNLOAD_URL,
+    license = LICENSE,
     #packages=['supersmoother',
     #          'supersmoother.tests',
     #      ],
-    install_requires=['numpy', ],
-    packages=['mie','mie.tests', ],
-    classifiers=[
+    install_requires = ['numpy', ],
+    packages = ['mie','mie.tests', ],
+    classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Science/Research',

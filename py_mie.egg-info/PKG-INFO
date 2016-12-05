@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: py-mie
+Version: 0.4.1
+Summary: Python wrapper for Mie theory calculators
+Home-page: http://github.com/darothen/py-mie
+Author: Daniel Rothenberg
+Author-email: darothen@mit.edu
+License: MIT
+Download-URL: http://github.com/darothen/py-mie
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Fortran
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science

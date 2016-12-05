@@ -14,6 +14,14 @@ Currently, installation must be from the source code itself. Download the source
 
 The only package dependency is ``f2py`` via ``numpy`` or ``scipy``.
 
+Unit Tests
+----------
+
+To run the unit tests using nosetests, run the following:
+
+    $ nosetests
+
+
 Authors
 -------
 
