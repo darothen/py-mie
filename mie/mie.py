@@ -32,6 +32,14 @@ def bhmie_scatter(particle_radius, radiation_lambda, n_particle):
         The scattering efficiency, absorption efficiency, and asymmetry
         parameter for the specified particle
 
+    Examples
+    --------
+
+    Evaluate the scattering for a PSL with particle radius of 0.5 microns and RI=1.5
+    at an incident wavelength of 658 nm:
+
+    >>> qsca, _, _ = mie.bhmie_scatter(0.5, 0.658, 1.5+1j*0)
+
     """
 
     # Pass directly to Mie module
