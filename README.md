@@ -10,7 +10,7 @@ This library wraps several Fortran implementations of Mie theory calculators ([1
 Currently, you can install the package directly from the source code or via pip. To install directly from source, download the source code and execute:
 
 ``` bash
-    $ python setup.py install
+    $ pip install -e .
 ```
 
 The package can also be installed directly from GitHub via the command:
