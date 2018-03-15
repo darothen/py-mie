@@ -3,7 +3,7 @@
 import os
 from numpy.distutils.core import setup, Extension
 
-VERSION = '0.4.0'
+VERSION = '0.4.1'
 
 src_dir = "src"
 pkg_dir = "mie"
@@ -39,9 +39,6 @@ setup(
     url = URL,
     download_url = DOWNLOAD_URL,
     license = LICENSE,
-    #packages=['supersmoother',
-    #          'supersmoother.tests',
-    #      ],
     install_requires = ['numpy', ],
     packages = ['mie','mie.tests', ],
     classifiers = [
