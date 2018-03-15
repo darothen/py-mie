@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to py-mie’s documentation! &mdash; py-mie 0.4.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="py-mie 0.4.1 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> py-mie
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to py-mie’s documentation!</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#getting-help">Getting Help</a></li>
+<li><a class="reference internal" href="#running-unittests">Running Unittests</a></li>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#citation">Citation</a><ul>
+<li><a class="reference internal" href="#references">References</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">py-mie</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to py-mie’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-py-mie-s-documentation">
+<h1>Welcome to py-mie’s documentation!<a class="headerlink" href="#welcome-to-py-mie-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This library wraps several Fortran implementations of Mie theory calculators
+([1], [2], …) with a python interface. The Fortran code itself has not been
+changed from their original form, and two-levels of drivers are available to run
+them. At the moment, an interface to the raw Mie codes (with all input parameters
+and output quantities) is not provided, although this functionality will probably
+be added in the future.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Currently, installation must be from the source code itself. Download the source
+code and execute:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python setup.py install
+</pre></div>
+</div>
+<p>Alternatively, you can install directly from GitHub:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/darothen/py-mie.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The only package dependency is <code class="docutils literal"><span class="pre">f2py</span></code> via either <code class="docutils literal"><span class="pre">numpy</span></code> or <code class="docutils literal"><span class="pre">scipy</span></code>.</p>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>To raise issues are ask specific questions about the library, please submit an
+issue via the <a class="reference external" href="https://github.com/darothen/py-mie/issues">GitHub repository</a>.</p>
+</div>
+<div class="section" id="running-unittests">
+<h2>Running Unittests<a class="headerlink" href="#running-unittests" title="Permalink to this headline">¶</a></h2>
+<p>To run the unit tests using nosetests, run the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ nosetests
+</pre></div>
+</div>
+</div>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<p>This library was packaged by Daniel Rothenberg (Massachusetts Institute of Technology).
+The Mie code and specialized interfaces have been provided by:</p>
+<ul class="simple">
+<li>Rahul Zaveri (Pacific Northwest National Labs)</li>
+<li>Alexander Avramov (Massachusetts Institute of Technology)</li>
+</ul>
+</div>
+<div class="section" id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
+<p>If this wrapper library was useful to you, please consider citing its DOI along
+with the relevant scientific citation to one of the References below. It’s up to
+us to change our academic culture and ensure that researchers who take the time
+to build useful tools are properly credited for their hard work!</p>
+<p>In addition, this package can be cited using the following DOI:</p>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.192510"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.192510.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.192510.svg" /></a>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Owen B. Toon and T.P. Ackerman, “Algorithms for the calculation of scattering by stratified spheres”, Appl. Opt. 20, 3657-3660 (1981)</li>
+<li>C.F. Bohren and D.R. Huffman, Absorption and Scattering of Light by Small Particles, New York, Wiley, 1983, 530 pages</li>
+</ol>
+<div class="section" id="api-reference">
+<h4>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="mie.bhmie_scatter">
+<code class="descclassname">mie.</code><code class="descname">bhmie_scatter</code><span class="sig-paren">(</span><em>particle_radius</em>, <em>radiation_lambda</em>, <em>n_particle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mie/mie.html#bhmie_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mie.bhmie_scatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the scattering/absorption efficiency and asymmetry
+parameter for a homogenous particle.</p>
+<p>This function interfaces with the compiled Mie theory modules in order
+to determine the scattering parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>particle_radius</strong> : float</p>
+<blockquote>
+<div><p>The total particle radius (core + shell) in microns</p>
+</div></blockquote>
+<p><strong>radiation_lambda</strong> : float</p>
+<blockquote>
+<div><p>Wavelength of incident radiation in microns</p>
+</div></blockquote>
+<p><strong>n_particle</strong> : complex</p>
+<blockquote>
+<div><p>Complex refractive indices of the particle material</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Qsca, Qabs, asym</strong> : floats</p>
+<blockquote class="last">
+<div><p>The scattering efficiency, absorption efficiency, and asymmetry
+parameter for the specified particle</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Evaluate the scattering for a PSL with particle radius of 0.5 microns and RI=1.5
+at an incident wavelength of 658 nm:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">qsca</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mie</span><span class="o">.</span><span class="n">bhmie_scatter</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.658</span><span class="p">,</span> <span class="mf">1.5</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="mie.core_shell_scatter">
+<code class="descclassname">mie.</code><code class="descname">core_shell_scatter</code><span class="sig-paren">(</span><em>particle_radius</em>, <em>core_fraction</em>, <em>radiation_lambda</em>, <em>n_shell</em>, <em>n_core</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mie/mie.html#core_shell_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mie.core_shell_scatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the scattering/absorption efficiency and asymmetry
+parameter for a heterogeneous, core-shell mixed particle.</p>
+<p>This function interfaces with the compiled Mie theory modules in order
+to determine the scattering parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>particle_radius</strong> : float</p>
+<blockquote>
+<div><p>The total particle radius (core + shell) in microns</p>
+</div></blockquote>
+<p><strong>core_fraction</strong> : float</p>
+<blockquote>
+<div><p>The fraction of the particle comprised by its core, 0.0-1.0</p>
+</div></blockquote>
+<p><strong>radiation_lambda</strong> : float</p>
+<blockquote>
+<div><p>Wavelength of incident radiation in microns</p>
+</div></blockquote>
+<p><strong>n_shell, n_core</strong> : complex</p>
+<blockquote>
+<div><p>Complex refractive indices of the shell, and core respectively</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>Qsca, Qabs, asym</strong> : floats</p>
+<blockquote class="last">
+<div><p>The scattering efficiency, absorption efficiency, and asymmetry
+parameter for the specified particle</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mie.integrate_mode">
+<code class="descclassname">mie.</code><code class="descname">integrate_mode</code><span class="sig-paren">(</span><em>core_fraction</em>, <em>n_shell</em>, <em>n_core</em>, <em>radiation_lambda</em>, <em>mode_radius</em>, <em>mode_sigma</em>, <em>r_min=0.001</em>, <em>r_max=100.0</em>, <em>nr=200</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mie/mie.html#integrate_mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mie.integrate_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integrate Mie theory calculations over a lognormal aerosol mode with
+homogeneous particle properties, weighting by size distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>core_fraction</strong> : float</p>
+<blockquote>
+<div><p>The fraction of the particle comprised by its core, 0.0-1.0</p>
+</div></blockquote>
+<p><strong>n_shell, n_core</strong> : complex</p>
+<blockquote>
+<div><p>Complex refractive indices of the shell, and core respectively</p>
+</div></blockquote>
+<p><strong>radiation_lambda</strong> : float</p>
+<blockquote>
+<div><p>Wavelength of incident radiation in microns</p>
+</div></blockquote>
+<p><strong>mode_radius</strong> : float</p>
+<blockquote>
+<div><p>The geometric mean or mode radius of the aerosol size distribution, in
+microns</p>
+</div></blockquote>
+<p><strong>mode_sigma</strong> : float</p>
+<blockquote>
+<div><p>The geometric standard deviation of the aerosol size distribution</p>
+</div></blockquote>
+<p><strong>r_min, r_max</strong> : float (optional)</p>
+<blockquote>
+<div><p>The minimum and maximum particle radii to use in the integration, in
+microns</p>
+</div></blockquote>
+<p><strong>nr</strong> : int (optional)</p>
+<blockquote>
+<div><p>The number of particle radii to use in the integration</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mie_sca, mie_abs, mie_asym</strong> : floats</p>
+<blockquote class="last">
+<div><p>Scattering efficiency, absorption efficiency, and asymmetry parameter
+integrated over an aerosol size distribution</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Daniel Rothenberg.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.4.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

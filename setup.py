@@ -3,7 +3,7 @@
 import os
 from numpy.distutils.core import setup, Extension
 
-VERSION = '0.4.1'
+VERSION = '0.4.2'
 
 src_dir = "src"
 pkg_dir = "mie"

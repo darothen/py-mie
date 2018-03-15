@@ -39,7 +39,7 @@ install:
     - conda install --yes $DEPS pip
     - pip install -e .
     # - python setup.py build_ext --inplace
-    # - python setup.py install
+    #- python setup.py install
 
 # command to run tests
 script:
