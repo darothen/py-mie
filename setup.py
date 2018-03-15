@@ -2,10 +2,11 @@
 
 import os
 
-try:
-    from setuptools import setup, Extension
-except:
-    from numpy.distutils.core import setup, Extension
+#try:
+#    from setuptools import setup, Extension
+#except:
+
+from numpy.distutils.core import setup, Extension
 
 VERSION = '0.4.2'
 
