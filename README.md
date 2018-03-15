@@ -7,10 +7,16 @@ This library wraps several Fortran implementations of Mie theory calculators ([1
 
 ## Installation
 
-Currently, installation must be from the source code itself. Download the source code and execute:
+Currently, you can install the package directly from the source code or via pip. To install directly from source, download the source code and execute:
 
 ``` bash
     $ python setup.py install
+```
+
+The package can also be installed directly from GitHub via the command:
+
+``` bash
+    $ pip install git+https://github.com/darothen/py-mie.git@branch-name
 ```
 
 
@@ -34,7 +40,7 @@ This library was packaged by [Daniel Rothenberg (Massachusetts Institute of Tech
 
 ## Citation
 
-If this wrapper library was useful to you, please consider citing its [DOI](https://doi.org/10.5281/zenodo.192510) along with the relevant scientific citation to one of the **References** below. It's up to us to change our academic culture and ensure that researchers who take the time to build useful tools are properly credited for their hard work! 
+If this wrapper library was useful to you, please consider citing its [DOI](https://doi.org/10.5281/zenodo.192510) along with the relevant scientific citation to one of the **References** below. It's up to us to change our academic culture and ensure that researchers who take the time to build useful tools are properly credited for their hard work!
 
 ## References
 
