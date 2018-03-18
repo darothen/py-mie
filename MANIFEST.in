@@ -1,0 +1,4 @@
+include LICENSE.md
+recursive-include docs *
+prune docs/_build
+global-exclude .DS_Store

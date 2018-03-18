@@ -42,7 +42,7 @@ setup(
     install_requires = ['numpy', ],
     packages = ['mie','mie.tests', ],
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
@@ -52,6 +52,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Fortran',
         'Topic :: Scientific/Engineering :: Atmospheric Science',
     ],
