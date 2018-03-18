@@ -3,12 +3,15 @@
 import os
 from numpy.distutils.core import setup, Extension
 
-VERSION = '0.4.2'
+VERSION = '0.4.2.post1'
 
 src_dir = "src"
 pkg_dir = "mie"
 
 DESCRIPTION = "Python wrapper for Mie theory calculators"
+LONG_DESCRIPTION = """
+This package wraps several widely-used and vetted Mie theory calculators, originally implemented in Fortran. It includes several reference functions for highlighting how to adapt these calculators for more complex tasks, such as integrating over particle size distributions with variable optical properties. Furthermore, it includes implementations for both homogenous particles and simple mixture models such as core-shells. 
+"""
 NAME = "py-mie"
 AUTHOR = "Daniel Rothenberg"
 AUTHOR_EMAIL = "darothen@mit.edu"
